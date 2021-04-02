@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Extrabold.eot');
+  src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+    url('../assets/fonts/Gilroy-Extrabold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/Gilroy-Extrabold.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy-Extrabold.woff') format('woff'),
+    url('../assets/fonts/Gilroy-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
