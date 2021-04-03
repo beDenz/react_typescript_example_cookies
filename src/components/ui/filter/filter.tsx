@@ -12,6 +12,7 @@ const Filter: React.FC<FilterProps> = ({ onClick }) => {
       classes={{
         root: styles.root,
       }}
+      onClick={onClick}
     >
       <FilterListIcon />
     </ButtonBase>
