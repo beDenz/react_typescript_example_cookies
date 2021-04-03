@@ -1,7 +1,5 @@
-// import styles from './filter.module.scss'
 import FilterListIcon from '@material-ui/icons/FilterList'
 import { ButtonBase } from '@material-ui/core'
-
 import { makeStyles } from '@material-ui/core/styles'
 
 export type FilterProps = {

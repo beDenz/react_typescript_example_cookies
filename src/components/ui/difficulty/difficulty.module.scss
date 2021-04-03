@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  & > *:first-child {
+    margin-right: 8px;
+  }
+}
+
+.easy {
+  color: #2fb65d;
+}
+
+.medium {
+  color: #eb8a31;
+}
+
+.hard {
+  color: #eb3c31;
+}
