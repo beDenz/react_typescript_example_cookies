@@ -14,6 +14,22 @@ h1 {
   font-family: variables.$gilroy;
 }
 
-p {
+p,
+span,
+input,
+textarea {
   font-family: variables.$roboto;
+  font-size: variables.$main-text-size;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }

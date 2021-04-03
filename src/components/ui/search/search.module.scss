@@ -1,0 +1,47 @@
+@use '/src/styles/variables' as variables;
+
+.search {
+  position: relative;
+  display: inline-block;
+  padding: 16px 56px;
+  border: 1px solid variables.$shade20;
+  border-radius: 28px;
+}
+
+.icon,
+.label,
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon {
+  left: 16px;
+  color: variables.$shade40;
+}
+
+.label {
+  left: 56px;
+  color: variables.$shade40;
+  pointer-events: none;
+}
+
+.labelOff {
+  display: none;
+}
+
+.btn {
+  right: 16px;
+  opacity: 0;
+  color: variables.$shade40;
+  cursor: pointer;
+}
+
+.btnOn {
+  opacity: 1;
+}
+
+.btnAnimation {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}

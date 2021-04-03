@@ -1,6 +1,22 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('../src/assets/fonts/Gilroy-Extrabold.eot');
+    src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+      url('../src/assets/fonts/Gilroy-Extrabold.eot?#iefix')
+        format('embedded-opentype'),
+      url('../src/assets/fonts/Gilroy-Extrabold.woff2') format('woff2'),
+      url('../src/assets/fonts/Gilroy-Extrabold.woff') format('woff'),
+      url('../src/assets/fonts/Gilroy-Extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+
   body {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
   }
   * {
     box-sizing: border-box;
@@ -13,5 +29,20 @@
   ul,
   li {
     list-style: none;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  p,
+  span,
+  input,
+  textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
   }
 </style>
