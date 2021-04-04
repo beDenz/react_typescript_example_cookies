@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 export type SearchProps = {
   value: string
-  onChange: () => void
+  onChange: (value: string) => void
 }
 
 const Search: React.FC<SearchProps> = ({ value = '', onChange }) => {
@@ -27,7 +27,7 @@ const Search: React.FC<SearchProps> = ({ value = '', onChange }) => {
         classes={{
           root: styles.btnAnimation,
         }}
-        onClick={onChange}
+        onClick={() => onChange('')}
       />
     </div>
   )
