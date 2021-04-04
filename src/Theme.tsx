@@ -33,6 +33,15 @@ const theme = createMuiTheme({
       lineHeight: '11px',
     },
   },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          backgroundColor: '#ffffff',
+        },
+      },
+    },
+  },
 })
 
 export { theme }

@@ -9,8 +9,10 @@ enum DifficultyDescriptionList {
   hard = 'hard',
 }
 
+export type DifficultyKeyList = keyof typeof DifficultyDescriptionList
+
 export type DifficultyProps = {
-  type: keyof typeof DifficultyDescriptionList
+  type: DifficultyKeyList
 }
 
 const useStyles = makeStyles({

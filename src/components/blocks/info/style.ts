@@ -1,9 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
-  container: {
+  info: {
     display: 'flex',
-    maxWidth: `${(1084 * 100) / 1280}%`,
+  },
+  marginRight: {
+    marginRight: 32,
+  },
+  icon: {
+    marginRight: 8,
   },
 })
 
