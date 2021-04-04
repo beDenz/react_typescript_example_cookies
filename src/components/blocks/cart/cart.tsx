@@ -85,7 +85,7 @@ const ICard: React.FC<ICardProps> = ({ data }) => {
           <Tags data={tags} />
         </CardMedia>
         <CardContent className={styles.content}>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h3" component="h2">
             {title}
           </Typography>
           <Typography gutterBottom variant="body1" component="p">
