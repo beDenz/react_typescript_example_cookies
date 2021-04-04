@@ -7,6 +7,8 @@ import {
 } from '@material-ui/core'
 import { Tags } from 'src/components/ui'
 
+import { Link as RouterLink } from 'react-router-dom'
+
 import { ICardProps } from './index'
 import { useStyles } from './styles'
 
@@ -41,7 +43,7 @@ const ICard: React.FC<ICardProps> = ({ data }) => {
   ]
 
   return (
-    <Link href={`/${id}`} underline="none">
+    <Link component={RouterLink} to={`/post/${id}`} underline="none">
       <Card className={styles.root}>
         <CardMedia className={styles.media} image={thumbnail} title={title}>
           <Tags data={tags} />

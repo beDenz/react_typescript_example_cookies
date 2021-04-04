@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
 import { Container } from '@material-ui/core'
 import { Header } from 'src/components/blocks'
 import { Catalog, Post } from 'src/pages'
@@ -9,10 +14,13 @@ const App: React.FC = () => {
       <Header />
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Catalog />
           </Route>
-          <Route path="/post">
+          <Route exact path="/post">
+            <Redirect to="/" />
+          </Route>
+          <Route path="/post/:id">
             <Post />
           </Route>
         </Switch>
