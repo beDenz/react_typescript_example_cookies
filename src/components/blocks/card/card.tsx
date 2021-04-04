@@ -5,52 +5,14 @@ import {
   Typography,
   Link,
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-
 import { Tags } from 'src/components/ui'
 
-interface ICardItem {
-  id: number
-  title: string
-  description: string
-  caloricity: number
-  cookTime: number
-  thumbnail: string
-  cuisine: {
-    id: number
-    title: string
-  }
-}
-
-export type ICardProps = {
-  data: ICardItem
-}
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 348,
-    height: 384,
-  },
-  media: {
-    height: 196,
-    display: 'flex',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-  },
-  content: {
-    height: 188,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  description: {
-    display: '-webkit-box',
-    '-webkit-line-clamp': 4,
-    '-webkit-box-orient': 'vertical',
-    overflow: 'hidden',
-  },
-})
+import { ICardProps } from './index'
+import { useStyles } from './styles'
 
 const ICard: React.FC<ICardProps> = ({ data }) => {
+  if (!data) return null
+
   const styles = useStyles()
 
   const {

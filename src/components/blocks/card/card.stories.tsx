@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { ICard, ICardProps } from './cart'
+import { ICard, ICardProps } from './index'
 
 const data = {
   id: 1,
