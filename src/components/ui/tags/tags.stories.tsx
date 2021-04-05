@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { Tags, TagListProps } from './tags'
+import { Tags, TagListProps } from './index'
 
 export default {
   title: 'Cookies/UI/Tags',

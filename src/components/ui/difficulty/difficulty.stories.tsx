@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { Difficulty, DifficultyProps } from './difficulty'
+import { Difficulty, DifficultyProps } from './index'
 
 export default {
   title: 'Cookies/UI/Difficulty',

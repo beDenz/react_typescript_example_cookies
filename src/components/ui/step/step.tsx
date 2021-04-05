@@ -1,8 +1,5 @@
 import styles from './step.module.scss'
-
-export type StepProps = {
-  index: string | number
-}
+import { StepProps } from './step.d'
 
 const Step: React.FC<StepProps> = ({ index }) => {
   return (

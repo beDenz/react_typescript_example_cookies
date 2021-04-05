@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { Filter, FilterProps } from './filter'
+import { Filter, FilterProps } from './index'
 
 export default {
   title: 'Cookies/UI/Filter',

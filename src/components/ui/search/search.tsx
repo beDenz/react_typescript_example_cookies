@@ -2,11 +2,7 @@ import styles from './search.module.scss'
 import CancelIcon from '@material-ui/icons/Cancel'
 import SearchIcon from '@material-ui/icons/Search'
 import clsx from 'clsx'
-
-export type SearchProps = {
-  value: string
-  onChange: (value: string) => void
-}
+import { SearchProps } from './index'
 
 const Search: React.FC<SearchProps> = ({ value = '', onChange }) => {
   return (

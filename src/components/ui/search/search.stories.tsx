@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import { Search, SearchProps } from './search'
+import { Search, SearchProps } from './index'
 
 export default {
   title: 'Cookies/UI/Search',

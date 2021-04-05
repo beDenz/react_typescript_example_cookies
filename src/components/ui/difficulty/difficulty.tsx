@@ -1,25 +1,8 @@
 import styles from './difficulty.module.scss'
+import { useStyles } from './style'
 import { SvgIcon } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
-
-enum DifficultyDescriptionList {
-  easy = 'easy',
-  medium = 'medium',
-  hard = 'hard',
-}
-
-export type DifficultyKeyList = keyof typeof DifficultyDescriptionList
-
-export type DifficultyProps = {
-  type: DifficultyKeyList
-}
-
-const useStyles = makeStyles({
-  root: {
-    stroke: 'currentColor',
-  },
-})
+import { DifficultyDescriptionList, DifficultyProps } from './difficulty.d'
 
 const Icon: React.FunctionComponent = () => {
   const styles = useStyles()
