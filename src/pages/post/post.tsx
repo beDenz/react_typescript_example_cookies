@@ -3,7 +3,12 @@ import { Container } from '@material-ui/core'
 import { useParams } from 'react-router-dom'
 import { Typography } from '@material-ui/core'
 import { Grid } from '@material-ui/core'
-import { Instructions, Ingredients, Info } from 'src/components/blocks'
+import {
+  Instructions,
+  Ingredients,
+  Info,
+  ImageView,
+} from 'src/components/blocks'
 
 // eslint-disable-next-line
 const recipe = {
@@ -15,6 +20,8 @@ const recipe = {
     'http://img.sndimg.com/food/image/upload/w_450,c_fit/v1/img/recipes/18/53/42/qh75rY6tQmGTP0ytQcuD_Parmesan-Chicken-Cutlets-2.png',
   images: [
     'http://img.sndimg.com/food/image/upload/w_1280,c_fit/v1/img/recipes/18/53/42/qh75rY6tQmGTP0ytQcuD_Parmesan-Chicken-Cutlets-2.png',
+    'http://img.sndimg.com/food/image/upload/w_1280,c_fit/v1/img/recipes/15/86/11/picsJ0Izp.jpg',
+    'http://img.sndimg.com/food/image/upload/w_1280,c_fit/v1/img/recipes/24/90/61/aeYqikQREr4NA30arygh_IMG_0670.JPG',
   ],
   cuisine: {
     id: 1,
@@ -62,6 +69,7 @@ const Post: React.FC = () => {
     cookTime,
     cuisine,
     caloricity,
+    images,
   } = data
 
   return (
@@ -84,9 +92,7 @@ const Post: React.FC = () => {
           <Instructions data={instructions} />
         </Grid>
         <Grid item xs={6}>
-          <Typography gutterBottom variant="body1" component="p">
-            {description}
-          </Typography>
+          <ImageView data={images} />
         </Grid>
       </Grid>
     </Container>
