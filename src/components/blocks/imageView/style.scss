@@ -1,25 +1,3 @@
-.slider-enter {
-  position: relative;
-}
-.slider-enter-active {
-  transform: translateX(-100%);
-  transition: transform 500ms;
-}
-.slider-exit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%);
-}
-.slider-exit-active {
-  transition: transform 500ms;
-  transform: translateX(0);
-}
-
-//
-
 .slider-right-enter {
   position: relative;
   transform: translateX(-100%);
@@ -41,8 +19,6 @@
   transition: transform 1000ms;
   transform: translateX(100%);
 }
-
-//
 
 .slider-left-enter {
   position: relative;

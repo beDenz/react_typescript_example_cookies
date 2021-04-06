@@ -52,7 +52,12 @@ const ICard: React.FC<ICardProps> = ({ data }) => {
           <Typography gutterBottom variant="h3" component="h2">
             {title}
           </Typography>
-          <Typography gutterBottom variant="body1" component="p">
+          <Typography
+            className={styles.description}
+            gutterBottom
+            variant="body1"
+            component="p"
+          >
             {description}
           </Typography>
         </CardContent>

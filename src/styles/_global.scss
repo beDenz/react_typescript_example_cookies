@@ -43,18 +43,32 @@ textarea {
 img {
   max-width: 100%;
 }
+.page {
+  position: relative;
+}
 
 .page-enter {
+  position: relative;
+  transform: translateX(-100%);
   opacity: 0;
 }
 .page-enter-active {
+  transform: translateX(0);
+  transition: transform 1000ms, opacity 500ms;
   opacity: 1;
-  transition: opacity 5000ms;
 }
+
 .page-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
   opacity: 1;
 }
 .page-exit-active {
+  transition: transform 1000ms, opacity 800ms;
+  transform: translateX(100%);
   opacity: 0;
-  transition: opacity 5000ms;
 }

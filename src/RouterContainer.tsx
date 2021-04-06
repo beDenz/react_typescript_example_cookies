@@ -13,19 +13,26 @@ const Aimated: React.FC = () => {
   const location = useLocation()
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="page" timeout={300}>
-        <Switch location={location}>
-          <Route exact path="/">
-            <Catalog />
-          </Route>
-          <Route exact path="/post">
-            <Redirect to="/" />
-          </Route>
-          <Route path="/post/:id">
-            <Post />
-          </Route>
-        </Switch>
+    <TransitionGroup className="page">
+      <CSSTransition
+        key={location.pathname}
+        classNames="page"
+        timeout={1000}
+        unmountOnExit
+      >
+        <div>
+          <Switch location={location}>
+            <Route exact path="/">
+              <Catalog />
+            </Route>
+            <Route exact path="/post">
+              <Redirect to="/" />
+            </Route>
+            <Route path="/post/:id">
+              <Post />
+            </Route>
+          </Switch>
+        </div>
       </CSSTransition>
     </TransitionGroup>
   )
@@ -42,32 +49,3 @@ const RouterContainer: React.FC = ({ children }) => {
 }
 
 export { RouterContainer }
-
-// const RouterContainer: React.FC = ({ children }) => {
-//   // eslint-disable-next-line
-//   const location = useLocation()
-//   // eslint-disable-next-line
-//   console.log('location', location)
-
-//   return (
-//     <Router>
-//       <ScrollToTop />
-//       {children}
-//       <TransitionGroup>
-//         <CSSTransition classNames="fade" timeout={300}>
-//           <Switch>
-//             <Route exact path="/">
-//               <Catalog />
-//             </Route>
-//             <Route exact path="/post">
-//               <Redirect to="/" />
-//             </Route>
-//             <Route path="/post/:id">
-//               <Post />
-//             </Route>
-//           </Switch>
-//         </CSSTransition>
-//       </TransitionGroup>
-//     </Router>
-//   )
-// }
