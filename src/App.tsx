@@ -7,8 +7,9 @@ const App: React.FC = () => {
   return (
     <QueryProvider>
       <Container maxWidth={false} disableGutters={true}>
-        <Header />
-        <RouterContainer />
+        <RouterContainer>
+          <Header />
+        </RouterContainer>
       </Container>
     </QueryProvider>
   )

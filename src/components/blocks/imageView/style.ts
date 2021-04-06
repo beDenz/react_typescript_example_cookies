@@ -5,6 +5,7 @@ const useStyles = makeStyles({
     overflow: 'hidden',
   },
   main: {
+    position: 'relative',
     width: '100%',
     height: 355,
     marginBottom: 16,

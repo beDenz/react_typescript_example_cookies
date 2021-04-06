@@ -4,6 +4,9 @@
   & > *:first-child {
     margin-right: 8px;
   }
+  span {
+    text-transform: capitalize;
+  }
 }
 
 .easy {
