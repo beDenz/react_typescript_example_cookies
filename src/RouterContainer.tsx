@@ -5,7 +5,7 @@ import {
   Redirect,
   useLocation,
 } from 'react-router-dom'
-import { Catalog, Post } from 'src/pages'
+import { Catalog, Post, Modal } from 'src/pages'
 import { ScrollToTop } from 'src/components/ScrollToTop'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
@@ -44,6 +44,7 @@ const RouterContainer: React.FC = ({ children }) => {
       <ScrollToTop />
       {children}
       <Aimated />
+      <Modal />
     </Router>
   )
 }

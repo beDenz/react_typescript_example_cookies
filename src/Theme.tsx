@@ -33,6 +33,23 @@ const theme = createMuiTheme({
       lineHeight: '11px',
     },
   },
+  palette: {
+    base0: {
+      main: '#000000',
+    },
+    base1: {
+      main: '#ffffff',
+    },
+    shade20: {
+      main: '#DDDDDD',
+    },
+    shade40: {
+      main: '#A9A9A9',
+    },
+    shade50: {
+      main: '#82786A',
+    },
+  },
   overrides: {
     MuiCssBaseline: {
       '@global': {
