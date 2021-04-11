@@ -14,6 +14,8 @@ const useFilter = (init: any) => {
   }, [init])
 
   useEffect(() => {
+    if (!init) return
+
     const cuisine = new URLSearchParams(location.search)
       ?.get('cuisine')
       ?.split(',')
@@ -23,7 +25,20 @@ const useFilter = (init: any) => {
       ?.split(',')
       .map((item) => parseInt(item))
 
-    if (cuisine) {
+    if (cuisine && calories) {
+      const [min, max] = calories
+
+      setData(() =>
+        init.filter(
+          (item: ICardItem) =>
+            cuisine.includes(item.cuisine.id.toString()) &&
+            item.caloricity >= min &&
+            item.caloricity <= max
+        )
+      )
+    }
+
+    if (cuisine && !calories) {
       setData(() =>
         init.filter((item: ICardItem) =>
           cuisine.includes(item.cuisine.id.toString())
@@ -31,7 +46,7 @@ const useFilter = (init: any) => {
       )
     }
 
-    if (calories) {
+    if (calories && !cuisine) {
       const [min, max] = calories
 
       setData(() =>
@@ -40,7 +55,7 @@ const useFilter = (init: any) => {
         )
       )
     }
-  }, [location.search])
+  }, [location.search, init])
 
   return [data]
 }

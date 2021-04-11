@@ -4,11 +4,19 @@ import { Filter, Search } from 'src/components/ui'
 import { useStyles } from './style'
 import { useHeaderHeight } from 'src/core/hooks'
 import { Link as RouterLink } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const Header: React.FC = () => {
+  const history = useHistory()
+  const location = useLocation()
+
   const tempEvent = () => {
-    let a
-    return a
+    history.push({
+      ...location,
+      state: {
+        modal: true,
+      },
+    })
   }
   const height = useHeaderHeight(600)
   const styles = useStyles({ height })

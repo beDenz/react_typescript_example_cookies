@@ -15,35 +15,50 @@ const useGetFilterCheckbox = (): [
 
   // Здесь мы можем запросить актальный список
 
-  const [list, setList] = useState<useGetFilterCheckboxType[]>([
+  const fetchResult = [
     {
       id: '1',
       value: 'Caribbean',
-      checked: true,
     },
 
     {
       id: '2',
       value: 'Greek',
-      checked: true,
     },
     {
       id: '3',
       value: 'French',
-      checked: true,
     },
     {
       id: '4',
       value: 'Chinese',
-      checked: true,
     },
 
     {
       id: '5',
       value: 'Indian',
-      checked: true,
     },
-  ])
+  ]
+
+  const initFilterCheckbox = (
+    data: useGetFilterCheckboxType[]
+  ): useGetFilterCheckboxType[] => {
+    if (new URLSearchParams(location.search).get('cuisine')) {
+      const ids = new URLSearchParams(location.search)
+        ?.get('cuisine')
+        ?.split(',')
+
+      return data.map((item: useGetFilterCheckboxType) =>
+        ids?.includes(item.id)
+          ? { ...item, checked: true }
+          : { ...item, checked: false }
+      )
+    } else return data.map((item) => ({ ...item, checked: true }))
+  }
+
+  const [list, setList] = useState<useGetFilterCheckboxType[]>(
+    initFilterCheckbox(fetchResult)
+  )
 
   const onToogleCheckbox = (id: string) => {
     setList((prev: useGetFilterCheckboxType[]): useGetFilterCheckboxType[] =>
@@ -60,16 +75,6 @@ const useGetFilterCheckbox = (): [
           ...item,
           checked: true,
         }))
-      )
-    } else if (new URLSearchParams(location.search).get('cuisine')) {
-      const ids = new URLSearchParams(location.search)
-        ?.get('cuisine')
-        ?.split(',')
-
-      setList((prev: useGetFilterCheckboxType[]): useGetFilterCheckboxType[] =>
-        prev.map((item: useGetFilterCheckboxType) =>
-          ids?.includes(item.id) ? { ...item, checked: true } : item
-        )
       )
     }
   }, [location.search])
