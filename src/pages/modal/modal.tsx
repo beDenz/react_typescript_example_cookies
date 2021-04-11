@@ -1,6 +1,5 @@
 import { Box } from '@material-ui/core'
 import { useStyles, useSliderStyles, useCheckboxStyles } from './style'
-import { useState, useEffect } from 'react'
 import {
   Button,
   Typography,
@@ -15,103 +14,7 @@ import {
 import CloseIcon from '@material-ui/icons/Close'
 import clsx from 'clsx'
 import { useHistory, useLocation } from 'react-router-dom'
-
-type useGetFilterCheckboxType = {
-  id: string
-  value: string
-  checked?: boolean
-}
-
-const useGetFilterCheckbox = (): [
-  useGetFilterCheckboxType[],
-  (id: string) => void
-] => {
-  const location = useLocation()
-
-  // Здесь мы можем запросить актальный список
-
-  const [list, setList] = useState<useGetFilterCheckboxType[]>([
-    {
-      id: '1',
-      value: 'Caribbean',
-      checked: true,
-    },
-
-    {
-      id: '2',
-      value: 'Greek',
-      checked: true,
-    },
-    {
-      id: '3',
-      value: 'French',
-      checked: true,
-    },
-  ])
-
-  const onToogleCheckbox = (id: string) => {
-    setList((prev: useGetFilterCheckboxType[]): useGetFilterCheckboxType[] =>
-      prev.map((item: useGetFilterCheckboxType) =>
-        item.id == id ? { ...item, checked: !item.checked } : item
-      )
-    )
-  }
-
-  useEffect(() => {
-    if (!location.search) {
-      setList((prev: useGetFilterCheckboxType[]): useGetFilterCheckboxType[] =>
-        prev.map((item: useGetFilterCheckboxType) => ({
-          ...item,
-          checked: true,
-        }))
-      )
-    } else if (new URLSearchParams(location.search).get('cuisine')) {
-      const ids = new URLSearchParams(location.search)
-        ?.get('cuisine')
-        ?.split(',')
-
-      setList((prev: useGetFilterCheckboxType[]): useGetFilterCheckboxType[] =>
-        prev.map((item: useGetFilterCheckboxType) =>
-          ids?.includes(item.id) ? { ...item, checked: true } : item
-        )
-      )
-    }
-  }, [location.search])
-
-  return [list, onToogleCheckbox]
-}
-
-type useGetFilterCaloriesProps = {
-  min: number
-  max: number
-}
-
-const useGetFilterCalories = ({
-  min,
-  max,
-}: useGetFilterCaloriesProps): [number[], (event: any, value: any) => void] => {
-  const location = useLocation()
-  const [sliderValue, setSliderValue] = useState([min, max])
-
-  const onChangeSlider = (event: any, value: any): any => {
-    setSliderValue(value)
-  }
-
-  useEffect(() => {
-    if (!location.search) {
-      setSliderValue([min, max])
-    } else if (new URLSearchParams(location.search).get('cal')) {
-      const values = new URLSearchParams(location.search)
-        ?.get('cal')
-        ?.split(',')
-
-      if (values) {
-        setSliderValue(values?.map(Number))
-      }
-    }
-  }, [location.search])
-  return [sliderValue, onChangeSlider]
-}
+import { useGetFilterCalories, useGetFilterCheckbox } from 'src/core/hooks'
 
 const Modal: React.FC = () => {
   const history = useHistory()

@@ -2,6 +2,7 @@ import { ICard, ICardItem } from 'src/components/blocks'
 import { Grid, Container } from '@material-ui/core'
 import { useStyles } from './style'
 import { useQuery } from 'react-query'
+import { useFilter } from 'src/core/hooks'
 
 // const recipes = [
 //   {
@@ -116,10 +117,11 @@ const Catalog: React.FC = () => {
 
   const { data, isLoading, isError } = useQuery('catalog', fetchCatalog)
 
+  const [recipes] = useFilter(data?.recipes)
+
   if (isLoading) return null
   if (isError) return null
-
-  const { recipes } = data
+  if (!recipes) return null
 
   return (
     <Container className={styles.container} disableGutters={true}>
