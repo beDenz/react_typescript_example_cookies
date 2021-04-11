@@ -6,11 +6,13 @@ const useStyles = makeStyles({
     paddingTop: 632,
   },
   grid: {
-    justifyContent: 'space-between',
+    width: 'auto',
     flexDirection: 'row',
+    margin: -10,
   },
   gridItem: {
     marginBottom: 24,
+    padding: 10,
   },
 })
 
