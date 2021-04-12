@@ -1,4 +1,5 @@
 {
+  "homepage": "https://bedenz.github.io/react_typescript_example_cookies",
   "name": "kode_test",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +11,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "husky": {
     "hooks": {

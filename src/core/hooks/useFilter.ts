@@ -3,6 +3,7 @@ import { ICardItem } from 'src/components/blocks'
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
+// eslint-disable-next-line
 const useFilter = (init: any) => {
   const location = useLocation()
   const [data, setData] = useState(init)
